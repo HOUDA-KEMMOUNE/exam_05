@@ -66,3 +66,8 @@ void	bigint::check_digits()
 		i++;
 	}
 }
+
+std::string	bigint::get_value(void)
+{
+	return (m_value);
+}
