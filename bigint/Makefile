@@ -1,13 +1,13 @@
 NAME = bigint
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = bigint.cpp
-OBJ = bigint.cpp
+SRC = bigint.cpp main.cpp
+OBJ = bigint.o main.o
 
 all: $(NAME)
 
-$(OBJ): $(SRC)
-	$(CPP) $(CPPFLAGS) -c $(SRC) -o $@
+%.o: %.c
+	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $@

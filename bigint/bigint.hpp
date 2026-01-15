@@ -12,13 +12,26 @@ class	bigint
 
 	public:
 		bigint(void);
-		bigint(std::string &s);
+		bigint(const std::string &s);
 		bigint(unsigned int n);
 		bigint(const bigint &old);
 		bigint &operator=(const bigint &old);
-		bigint &operator+=(const bigint &old);
+		// bigint &operator+=(const bigint &old);
 		const std::string	&get_value(void) const;
 		~bigint(void);
 };
+
+std::ostream	&operator<<(std::ostream &out, const bigint &bi);
+
+int				compare_string(const std::string &A, const std::string &B);
+bool			operator==(const bigint &a, const bigint &b);
+bool			operator!=(const bigint &a, const bigint &b);
+bool			operator<(const bigint &a, const bigint &b);
+bool			operator<=(const bigint &a, const bigint &b);
+bool			operator>(const bigint &a, const bigint &b);
+bool			operator>=(const bigint &a, const bigint &b);
+
+bigint			operator<<(const bigint &a, int k);
+bigint			operator>>(const bigint &a, int k);
 
 # endif
