@@ -67,7 +67,7 @@ void	bigint::check_digits()
 	}
 }
 
-std::string	bigint::get_value(void)
+const std::string	&bigint::get_value(void) const
 {
 	return (m_value);
 }

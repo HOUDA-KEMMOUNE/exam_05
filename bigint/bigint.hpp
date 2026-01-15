@@ -17,7 +17,7 @@ class	bigint
 		bigint(const bigint &old);
 		bigint &operator=(const bigint &old);
 		bigint &operator+=(const bigint &old);
-		std::string	get_value(void);
+		const std::string	&get_value(void) const;
 		~bigint(void);
 };
 
