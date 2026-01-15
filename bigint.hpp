@@ -13,10 +13,11 @@ class	bigint
 	public:
 		bigint( void );
 		bigint( unsigned int n );
-		bigint( std::string &s );
+		bigint( const std::string &s );
 		bigint( const bigint &old );
 		bigint &operator=( const bigint &old );
-		bigint &operator+=( const bigint &old );
+		// bigint &operator+=( const bigint &old );
+		std::string	get_value( void );
 		~bigint( void );
 };
 

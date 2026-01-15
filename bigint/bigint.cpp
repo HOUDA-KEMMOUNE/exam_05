@@ -30,11 +30,11 @@ bigint	&bigint::operator=(const bigint &old)
 	return (*this);
 }
 
-bigint &bigint::operator+=(const bigint &old)
-{
-    *this = *this + old;
-    return *this;
-}
+// bigint &bigint::operator+=(const bigint &old)
+// {
+//     *this = *this + old;
+//     return *this;
+// }
 
 bigint::~bigint(void)
 {
