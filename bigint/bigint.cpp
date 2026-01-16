@@ -172,3 +172,65 @@ bigint	operator>>(const bigint &a, int k)
 	return (bigint(res));
 }
 
+bigint	&bigint::operator<<=( int k )
+{
+	*this = *this << k;
+	return (*this);
+}
+
+bigint	&bigint::operator>>=( int k )
+{
+	*this = *this >> k;
+	return (*this);
+}
+
+bigint	operator+(const bigint &a, const bigint &b)
+{
+	const std::string	&A = a.get_value();
+	const std::string	&B = b.get_value();
+	std::string			res;
+	int	i = (int)A.size() - 1;
+	int	j = (int)B.size() - 1;
+	int	carry = 0;
+
+	while (i >= 0 || j >= 0 || carry > 0)
+	{
+		int	digitA = 0;
+		if (i >= 0)
+			digitA = A[i] - '0';
+
+		int	digitB = 0;
+		if (j >= 0)
+			digitB = B[j] - '0';
+		
+		int	sum = digitA + digitB + carry;
+		int	digit_out = sum % 10;
+		carry = sum / 10;
+
+		res.push_back(char(digit_out + '0'));
+
+		i--;
+		j--;
+	}
+	std::reverse(res.begin(), res.end());
+	return (bigint(res));
+}
+
+bigint	&bigint::operator+=( const bigint &num )
+{
+	*this = *this + num;
+	return (*this);
+}
+
+bigint	&bigint::operator++()
+{
+	*this = *this + bigint(1);
+	return (*this);
+}
+
+bigint	bigint::operator++(int)
+{
+	bigint	tmp = *this;
+	*this = *this + bigint(1);
+	return (tmp);
+}

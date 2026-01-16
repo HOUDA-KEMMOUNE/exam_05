@@ -16,8 +16,12 @@ class	bigint
 		bigint(unsigned int n);
 		bigint(const bigint &old);
 		bigint &operator=(const bigint &old);
-		// bigint &operator+=(const bigint &old);
+		bigint &operator+=(const bigint &num);
+		bigint	&operator<<=( int k );
+		bigint	&operator>>=( int k );
 		const std::string	&get_value(void) const;
+		bigint	&operator++();
+		bigint	operator++(int);
 		~bigint(void);
 };
 
@@ -30,6 +34,8 @@ bool			operator<(const bigint &a, const bigint &b);
 bool			operator<=(const bigint &a, const bigint &b);
 bool			operator>(const bigint &a, const bigint &b);
 bool			operator>=(const bigint &a, const bigint &b);
+
+bigint			operator+(const bigint &a, const bigint &b);
 
 bigint			operator<<(const bigint &a, int k);
 bigint			operator>>(const bigint &a, int k);
