@@ -6,7 +6,7 @@ OBJ = bigint.o main.o
 
 all: $(NAME)
 
-%.o: .cpp
+%.o: %.cpp
 	@$(CPP) $(CPPFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)

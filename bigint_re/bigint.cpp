@@ -30,6 +30,23 @@ void	bigint::trim( void )
 		m_value = m_value.substr(pos);
 }
 
+void	bigint::check_digits( void )
+{
+	if (m_value.empty())
+		m_value = "0";
+	
+	size_t	i = 0;
+	while (i < m_value.size())
+	{
+		if (!std::isdigit(static_cast<unsigned char>(m_value[i])))
+		{
+			m_value = "0";
+			return ;
+		}
+		i++;
+	}
+}
+
 bigint::bigint( const bigint &old )
 {
 	*this = old;
