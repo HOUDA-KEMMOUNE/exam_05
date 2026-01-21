@@ -1,13 +1,13 @@
-NAME = bigint
+NAME = vect2
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = *.cpp 
-OBJ = bigint.o main.o
+SRC = *.cpp
+OBJ = vect2.o main.o
 
 all: $(NAME) clean
-	./$(NAME)
+	./vect2
 
-%.o: %.cpp
+%.o: %.c
 	@$(CPP) $(CPPFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
