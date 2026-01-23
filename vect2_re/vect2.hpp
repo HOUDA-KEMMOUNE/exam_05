@@ -1,7 +1,8 @@
 # ifndef VECT2_HPP
 # define VECT2_HPP
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
 
 class	vect2
 {
@@ -14,49 +15,49 @@ class	vect2
 		vect2( int a, int b );
 		vect2( const vect2 &old );
 		vect2	&operator=( const vect2 &old );
-
-		int		get_x( void ) const;
-		int		get_y( void ) const;
+		~vect2( void );
 
 		vect2	&operator++();
-		vect2	operator++(int);
+		vect2	operator++( int );
 		vect2	&operator--();
-		vect2	operator--(int);
+		vect2	operator--( int );
 
 		vect2	&operator+=( const vect2 &v );
 		vect2	&operator-=( const vect2 &v );
 		vect2	&operator*=( const vect2 &v );
 
-		vect2	&operator*=( int k );
+		vect2	&operator*=( int v );
 
 		vect2	&operator-( void );
 
-		int		&operator[]( int i );
-		int		operator[]( int i ) const;
+		int				&operator[]( int i );
+		int				operator[]( int i ) const;
 
-		~vect2( void );
+		int	get_x( void ) const;
+		int	get_y( void ) const;
 };
 
 std::ostream	&operator<<( std::ostream &out, const vect2 &v );
 
-int				compare_vect( int a1, int a2, int b1, int b2 );
-bool			operator==( const vect2 &v1, const vect2 &v2 );
-bool			operator!=( const vect2 &v1, const vect2 &v2 );
-bool			operator<( const vect2 &v1, const vect2 &v2 );
-bool			operator<=( const vect2 &v1, const vect2 &v2 );
-bool			operator>( const vect2 &v1, const vect2 &v2 );
-bool			operator>=( const vect2 &v1, const vect2 &v2 );
+int				compare_vect( int x1, int x2, int y1, int y2 );
 
-vect2			operator+( const vect2 &v1, const vect2 &v2 );
-vect2			operator-( const vect2 &v1, const vect2 &v2 );
-vect2			operator*( const vect2 &v1, const vect2 &v2 );
+bool			operator==( const vect2 &v1 , const vect2 &v2 );
+bool			operator!=( const vect2 &v1 , const vect2 &v2 );
+bool			operator<( const vect2 &v1 , const vect2 &v2 );
+bool			operator<=( const vect2 &v1 , const vect2 &v2 );
+bool			operator>( const vect2 &v1 , const vect2 &v2 );
+bool			operator>=( const vect2 &v1 , const vect2 &v2 );
 
-vect2			operator+( int k, const vect2 &v2 );
-vect2			operator-( int k, const vect2 &v2 );
-vect2			operator*( int k, const vect2 &v2 );
+vect2			operator+( const vect2 &v1 , const vect2 &v2 );
+vect2			operator-( const vect2 &v1 , const vect2 &v2 );
+vect2			operator*( const vect2 &v1 , const vect2 &v2 );
 
-vect2			operator+( const vect2 &v1, int k );
-vect2			operator-( const vect2 &v1, int k );
-vect2			operator*( const vect2 &v1, int k );
+vect2			operator+( int k , const vect2 &v2 );
+vect2			operator-( int k , const vect2 &v2 );
+vect2			operator*( int k , const vect2 &v2 );
+
+vect2			operator+( const vect2 &v1 , int k );
+vect2			operator-( const vect2 &v1 , int k );
+vect2			operator*( const vect2 &v1 , int k );
 
 # endif

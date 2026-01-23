@@ -229,4 +229,16 @@ bigint			&bigint::operator++()
 	return (*this);
 }
 
+bigint			&bigint::operator>>=( const bigint &num )
+{
+	unsigned int		n;
+	std::stringstream	buffer;
+
+	buffer << num.m_value;
+	if (!(buffer >> n))
+		return (*this);
+	*this >>= n;
+	return (*this);
+}
+
 bigint::~bigint( void ) {}

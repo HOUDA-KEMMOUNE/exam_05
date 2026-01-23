@@ -29,6 +29,7 @@ class	bigint
 
 		bigint			operator++( int );
 		bigint			&operator++();
+		bigint			&operator>>=( const bigint &num );
 };
 
 std::ostream	&operator<<( std::ostream &out, const bigint &num );
